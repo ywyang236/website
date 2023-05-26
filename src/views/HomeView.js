@@ -1,38 +1,29 @@
 import Header from "../components/Header";
 import Product from "../components/Product";
 
+class ProductData {
+    constructor(id, name, price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.img = `https://picsum.photos/id/${id}/600/400`
+    }
+}
+
 // HomeView React Component
 const HomeView = () => {
     // React componet must return a JSX object
     // return ( JSX )
     const productList = [
-        {
-            id: 1,
-            name: "Product A",
-            price: 299,
-            img: "https://picsum.photos/id/999/600/400"
-        },
-        {
-            id: 2,
-            name: "Product B",
-            price: 499,
-            img: "https://picsum.photos/id/1/600/400"
-        },
-        {
-            id: 3,
-            name: "Product C",
-            price: 543,
-            img: "https://picsum.photos/id/2/600/400"
-        },
-        {
-            id: 4,
-            name: "Product D",
-            price: 123,
-            img: "https://picsum.photos/id/3/600/400"
-        }
+        new ProductData(1, "Product E", 1299),
+        new ProductData(2, "Product F", 3999),
+        new ProductData(3, "Product G", 4999),
+        new ProductData(4, "Product H", 4999),
+        new ProductData(999, "Product I", 599),
+        new ProductData(6, "Product J", 793),
     ];
     const productListElements = productList.map(product => {
-        return <Product product={product} />
+        return <Product key={product.id} product={product} />
     })
 
     return (

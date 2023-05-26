@@ -12,6 +12,7 @@ import reportWebVitals from './reportWebVitals';
 // Import views
 import HomeView from './views/HomeView';
 import AboutView from './views/AboutView';
+import BotView from './views/BotView';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <AboutView />,
+  },
+  {
+    path: "/bot",
+    element: <BotView />
   }
 
 ]);
