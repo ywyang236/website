@@ -1,0 +1,13 @@
+$primary: #ff0073;
+$white: #eee;
+
+header {
+    h1 {
+        color: $primary;
+    }
+
+    a {
+        color: $white;
+        margin-right: 15px;
+    }
+}

@@ -1,13 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/stylesheets/style.scss';
+
 import reportWebVitals from './reportWebVitals';
+// Import views
+import HomeView from './views/HomeView';
+import AboutView from './views/AboutView';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomeView />,
+  },
+  {
+    path: "/about",
+    element: <AboutView />,
+  }
+
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
